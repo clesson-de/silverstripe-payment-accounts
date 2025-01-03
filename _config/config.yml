@@ -1,0 +1,8 @@
+---
+Name: bank-account-config
+---
+
+Clesson\Contacts\Models\Contact:
+  extensions:
+    - Clesson\BankAccount\Extensions\Contact
+

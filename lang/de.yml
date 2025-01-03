@@ -1,0 +1,15 @@
+de:
+  Clesson\BankAccount\Common:
+    Created: 'Erstellt'
+    LastEdited: 'Zuletzt geändert'
+
+  Clesson\BankAccount\Models\BankAccount:
+    PLURALNAME: 'Bankkonten'
+    SINGULARNAME: 'Bankkonto'
+    Name: 'Bezeichnung'
+    IBAN: 'IBAN'
+    BIC: 'BIC'
+    Contact: 'Kontakt'
+
+  Clesson\BankAccount\Extensions\Contact:
+    BankAccounts: 'Bankkonten'

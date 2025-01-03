@@ -1,0 +1,23 @@
+{
+    "name": "clesson-de/silverstripe-bankaccount",
+    "description": "",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "extension",
+        "bank account"
+    ],
+    "authors": [
+        {
+            "name": "Kai Feldmaier",
+            "email": "kai.feldmaier@clesson.de",
+            "homepage": "https://clesson.de"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^4 | ^5",
+        "clesson-de/silverstripe-contacts": "*"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
