@@ -1,8 +1,4 @@
 ---
-Name: bank-account-config
+Name: payment-accounts-config
 ---
-
-Clesson\Contacts\Models\Contact:
-  extensions:
-    - Clesson\BankAccount\Extensions\Contact
 

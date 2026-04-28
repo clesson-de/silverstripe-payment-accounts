@@ -1,45 +1,45 @@
-de:
+en:
   Clesson\Silverstripe\PaymentAccount\Common:
     ID: 'ID'
-    CREATED: 'Erstellt'
-    LAST_EDITED: 'Zuletzt geändert'
+    CREATED: 'Created'
+    LAST_EDITED: 'Last edited'
 
   Clesson\Silverstripe\PaymentAccount\Models\PaymentAccount:
-    PLURALNAME: 'Zahlungskonten'
-    SINGULARNAME: 'Zahlungskonto'
-    HOLDER: 'Kontoinhaber'
-    NOTE: 'Notiz'
-    CONTACT: 'Kontakt'
+    PLURALNAME: 'Payment accounts'
+    SINGULARNAME: 'Payment account'
+    HOLDER: 'Account holder'
+    NOTE: 'Note'
+    CONTACT: 'Contact'
 
   Clesson\Silverstripe\PaymentAccount\Models\BankAccount:
-    PLURALNAME: 'Bankkonten'
-    SINGULARNAME: 'Bankkonto'
-    HOLDER: 'Kontoinhaber'
+    PLURALNAME: 'Bank accounts'
+    SINGULARNAME: 'Bank account'
+    HOLDER: 'Bank account holder'
     NAME: 'Bank'
     IBAN: 'IBAN'
     BIC: 'BIC'
 
   Clesson\Silverstripe\PaymentAccount\Models\CreditCard:
-    PLURALNAME: 'Kreditkarten'
-    SINGULARNAME: 'Kreditkarte'
-    HOLDER: 'Karteninhaber'
-    CARD_TYPE: 'Kartentyp'
-    LAST_4_DIGITS: 'Letzte 4 Ziffern'
-    EXPIRY_DATE: 'Ablaufdatum'
+    PLURALNAME: 'Credit cards'
+    SINGULARNAME: 'Credit card'
+    HOLDER: 'Cardholder'
+    CARD_TYPE: 'Card type'
+    LAST_4_DIGITS: 'Last 4 digits'
+    EXPIRY_DATE: 'Expiry date'
 
   Clesson\Silverstripe\PaymentAccount\Models\OnlineAccount:
-    PLURALNAME: 'Online-Konten'
-    SINGULARNAME: 'Online-Konto'
-    HOLDER: 'Kontoinhaber'
-    PROVIDER: 'Anbieter'
-    ACCOUNT_EMAIL: 'Konto-E-Mail'
+    PLURALNAME: 'Online accounts'
+    SINGULARNAME: 'Online account'
+    HOLDER: 'Account owner'
+    PROVIDER: 'Provider'
+    ACCOUNT_EMAIL: 'Account e-mail'
 
   Clesson\Silverstripe\PaymentAccount\Constants\CreditCardType:
     VISA: 'Visa'
     MASTERCARD: 'Mastercard'
     AMEX: 'American Express'
     DINERS: 'Diners Club'
-    OTHER: 'Sonstige'
+    OTHER: 'Other'
 
   Clesson\Silverstripe\PaymentAccount\Constants\OnlineAccountProvider:
     PAYPAL: 'PayPal'
@@ -47,11 +47,11 @@ de:
     KLARNA: 'Klarna'
     APPLE_PAY: 'Apple Pay'
     GOOGLE_PAY: 'Google Pay'
-    OTHER: 'Sonstige'
+    OTHER: 'Other'
 
   Clesson\Silverstripe\PaymentAccount\Extensions\Contact:
-    PAYMENT_ACCOUNTS: 'Zahlungskonten'
+    PAYMENT_ACCOUNTS: 'Payment accounts'
 
   Clesson\Silverstripe\PaymentAccount\Forms\GridFieldConfig_PaymentAccountsInContact:
-    TYPE: 'Art'
+    TYPE: 'Type'
     SUMMARY: 'Details'

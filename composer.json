@@ -1,11 +1,15 @@
 {
-    "name": "clesson-de/silverstripe-bankaccount",
-    "description": "",
+    "name": "clesson-de/silverstripe-payment-accounts",
+    "description": "Manage payment accounts (bank accounts, credit cards, online accounts) for contacts.",
     "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
     "keywords": [
         "silverstripe",
         "extension",
-        "bank account"
+        "payment accounts",
+        "bank account",
+        "credit card",
+        "paypal"
     ],
     "authors": [
         {
@@ -15,8 +19,12 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4 | ^5",
-        "clesson-de/silverstripe-contacts": "*"
+        "silverstripe/framework": "^6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clesson\\Silverstripe\\PaymentAccount\\": "src/"
+        }
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
