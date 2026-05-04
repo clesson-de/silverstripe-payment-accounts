@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Clesson\Silverstripe\PaymentAccount\Models;
 
+use Clesson\Silverstripe\PaymentAccount\Helpers\IbanHelper;
 use SilverStripe\Core\Validation\ValidationResult;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
@@ -62,6 +63,24 @@ class BankAccount extends PaymentAccount
     }
 
     /**
+     * Normalises and formats the IBAN before saving.
+     *
+     * Strips all whitespace, converts to uppercase, then inserts a space
+     * after every 4 characters (e.g. DE12 3456 7890 1234 5678 90).
+     *
+     * @inheritdoc
+     */
+    public function onBeforeWrite(): void
+    {
+        parent::onBeforeWrite();
+
+        if ($this->IBAN) {
+            $normalized = strtoupper(preg_replace('/\s+/', '', $this->IBAN));
+            $this->IBAN = trim(chunk_split($normalized, 4, ' '));
+        }
+    }
+
+    /**
      * Validates the record before writing.
      * Name (bank name) is required in addition to the base class validation.
      *
@@ -70,9 +89,21 @@ class BankAccount extends PaymentAccount
     public function validate(): ValidationResult
     {
         $result = parent::validate();
+
         if (!$this->Name) {
             $result->addError(_t(Form::class . '.FIELDISREQUIRED', '{name} is required', ['name' => $this->fieldLabel('Name')]));
         }
+
+        if (!$this->BIC) {
+            $result->addError(_t(Form::class . '.FIELDISREQUIRED', '{name} is required', ['name' => $this->fieldLabel('BIC')]));
+        }
+
+        if (!$this->IBAN) {
+            $result->addError(_t(Form::class . '.FIELDISREQUIRED', '{name} is required', ['name' => $this->fieldLabel('IBAN')]));
+        } elseif (!IbanHelper::isValid($this->IBAN)) {
+            $result->addError(_t(__CLASS__ . '.IBAN_INVALID', 'The IBAN {iban} is not valid.', ['iban' => $this->IBAN]));
+        }
+
         return $result;
     }
 
@@ -95,6 +126,7 @@ class BankAccount extends PaymentAccount
 
         /** @var TextField $ibanField */
         $ibanField = TextField::create('IBAN', $this->fieldLabel('IBAN'));
+        $ibanField->setAttribute('placeholder', 'DE12 3456 7890 1234 5678 90');
 
         $fields->addFieldsToTab('Root.Main', [$nameField, $bicField, $ibanField]);
 

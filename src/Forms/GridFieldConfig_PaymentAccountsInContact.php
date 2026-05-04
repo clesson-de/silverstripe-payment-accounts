@@ -14,6 +14,7 @@ use SilverStripe\Forms\GridField\GridFieldConfig;
 use SilverStripe\Forms\GridField\GridFieldDataColumns;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\Forms\GridField\GridFieldDetailForm;
+use SilverStripe\Forms\GridField\GridFieldEditButton;
 use SilverStripe\Forms\GridField\GridFieldSortableHeader;
 use Symbiote\GridFieldExtensions\GridFieldAddNewMultiClass;
 
@@ -71,6 +72,7 @@ class GridFieldConfig_PaymentAccountsInContact extends GridFieldConfig
         ]);
         $this->addComponent($addButton);
 
+        $this->addComponent(GridFieldEditButton::create());
         $this->addComponent(GridFieldDeleteAction::create());
         $this->addComponent(GridFieldDetailForm::create(null, $showPagination, $showAdd));
 

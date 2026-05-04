@@ -18,6 +18,7 @@ de:
     NAME: 'Bank'
     IBAN: 'IBAN'
     BIC: 'BIC'
+    IBAN_INVALID: 'Die IBAN {iban} ist ungültig.'
 
   Clesson\Silverstripe\PaymentAccount\Models\CreditCard:
     PLURALNAME: 'Kreditkarten'

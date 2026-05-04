@@ -99,7 +99,7 @@ class PaymentAccount extends DataObject
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['Holder', 'Note']);
+        $fields->removeByName(['Holder', 'Note', 'ContactID']);
 
         /** @var TextField $holderField */
         $holderField = TextField::create('Holder', $this->fieldLabel('Holder'));
